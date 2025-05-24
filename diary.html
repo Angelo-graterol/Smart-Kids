@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diario de Emociones - SmartKids</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="assets/SmartKids-logo.png" alt="SmartKids Logo" class="logo">
+        </div>
+        <nav class="header-nav">
+            <div class="nav-container">
+                <ul class="menu">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="diary.html" class="active">Diario</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="dashboard.html">Perfil</a></li>
+                    <li><a href="teacher.html">Docente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Mi Diario de Emociones</h2>
+        <p>Expresar cómo te sientes es muy importante. ¡Cuéntanos sobre tu día!</p>
+
+        <section class="card diary-entry-form">
+            <h3>Nueva Entrada: ¿Cómo te sientes hoy?</h3>
+            <div class="emoji-row">
+                <button class="emoji-btn" aria-label="Feliz">😊</button>
+                <button class="emoji-btn" aria-label="Triste">😢</button>
+                <button class="emoji-btn" aria-label="Enojado">😠</button>
+                <button class="emoji-btn" aria-label="Pensativo">🤔</button>
+                <button class="emoji-btn" aria-label="Emocionado">🎉</button>
+            </div>
+            <form>
+                <div class="form-group">
+                    <label for="diary-text">¿Algo que quieras compartir sobre tu día?</label>
+                    <textarea id="diary-text" name="diary-text" rows="4" placeholder="Escribe aquí tus pensamientos, lo que aprendiste, o algo divertido que pasó..."></textarea>
+                </div>
+                <button type="submit" class="btn">Guardar Entrada</button>
+            </form>
+        </section>
+
+        <section class="diary-history">
+            <h3>Tus Entradas Anteriores</h3>
+            <ul class="diary-list">
+                <li class="card diary-entry">
+                    <span class="emoji">😊</span>
+                    <div class="text">
+                        <strong>22 de Mayo, 2025</strong>
+                        <p>Hoy jugué mucho en el parque con mis amigos y aprendí a programar un pequeño robot en la clase de tecnología. ¡Fue genial!</p>
+                    </div>
+                </li>
+                 <li class="card diary-entry">
+                    <span class="emoji">🤔</span>
+                    <div class="text">
+                        <strong>21 de Mayo, 2025</strong>
+                        <p>El quiz de matemáticas estuvo un poco difícil hoy, pero la profesora nos ayudó mucho. Creo que necesito practicar más las tablas.</p>
+                    </div>
+                </li>
+                <li class="card diary-entry">
+                    <span class="emoji">🎉</span>
+                    <div class="text">
+                        <strong>20 de Mayo, 2025</strong>
+                        <p>¡Terminamos nuestro proyecto de ciencias! Hicimos un volcán que hizo erupción de verdad. ¡Todo el equipo trabajó muy bien!</p>
+                    </div>
+                </li>
+            </ul>
+            </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SmartKids. Tus emociones importan.</p>
+    </footer>
+    </body>
+</html>

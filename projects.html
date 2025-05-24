@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyectos Colaborativos - SmartKids</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="assets/SmartKids-logo.png" alt="SmartKids Logo" class="logo">
+        </div>
+        <nav class="header-nav">
+            <div class="nav-container">
+                <ul class="menu">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="diary.html">Diario</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="projects.html" class="active">Proyectos</a></li>
+                    <li><a href="dashboard.html">Perfil</a></li>
+                    <li><a href="teacher.html">Docente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Proyecto Actual: ¡Eco-Robots Constructores!</h2>
+        <p>¡Es hora de trabajar en equipo! El desafío es diseñar y construir un robot utilizando materiales reciclados que pueda realizar una tarea simple (ej: mover un objeto pequeño).</p>
+
+        <section class="card project-upload">
+            <h3>Entrega tu Proyecto y Evidencias</h3>
+            <form>
+                <div class="form-group">
+                    <label for="team-name">Nombre del Equipo:</label>
+                    <input type="text" id="team-name" name="team-name" required placeholder="Ej: Los Eco-Inventores">
+                </div>
+                <div class="form-group">
+                    <label for="team-members">Integrantes del Equipo:</label>
+                    <input type="text" id="team-members" name="team-members" required placeholder="Nombres separados por comas">
+                </div>
+                 <div class="form-group">
+                    <label for="project-description">Breve Descripción del Robot:</label>
+                    <textarea id="project-description" name="project-description" rows="3" placeholder="¿Qué hace su robot? ¿Qué materiales usaron?"></textarea>
+                </div>
+                 <div class="form-group">
+                    <label for="evidence-files">Sube tus Evidencias (Fotos, Videos Cortos, Diagramas):</label>
+                    <input type="file" id="evidence-files" name="evidence-files" multiple accept="image/*,video/mp4,application/pdf">
+                    <small>Puedes seleccionar múltiples archivos. Formatos aceptados: JPG, PNG, MP4, PDF.</small>
+                </div>
+                <button type="submit" class="btn">Enviar Proyecto</button>
+            </form>
+        </section>
+
+        <section class="project-submissions">
+             <h3>Entregas de Otros Equipos</h3>
+             <div class="card">
+                <h4>Equipo "Los Recicladores Creativos"</h4>
+                <p><strong>Robot:</strong> "LimpiaBot v1" - Un pequeño robot que barre migajas de la mesa.</p>
+                <p><em>Evidencias: <a href="#">Ver Fotos</a>, <a href="#">Video Demo (0:30)</a></em></p>
+             </div>
+              <div class="card">
+                <h4>Equipo "Eco Genios Unidos"</h4>
+                <p><strong>Robot:</strong> "PlantiRiego" - Robot que puede regar una planta pequeña cuando se le indica.</p>
+                <p><em>Evidencias: <a href="#">Diagrama de Construcción (PDF)</a>, <a href="#">Fotos del Proceso</a></em></p>
+             </div>
+             </section>
+
+        <section class="project-forum">
+            <h3>Foro de Discusión del Proyecto</h3>
+            <div class="comment">
+                <p><strong>Ana Gómez (Equipo Eco Genios):</strong> ¿Alguien sabe cómo hacer que un motor pequeño gire más lento sin usar resistencias complicadas?</p>
+                <small>Hace 1 hora</small>
+            </div>
+             <div class="comment">
+                <p><strong>Profesor Luis (Docente):</strong> ¡Hola Ana! Una idea podría ser intentar con una banda elástica para transmitir el movimiento desde el motor a una rueda más grande. Eso reduce la velocidad en la rueda. ¡Buena pregunta!</p>
+                <small>Hace 30 minutos</small>
+            </div>
+            <div class="comment">
+                <p><strong>Pedro Pérez (Los Recicladores):</strong> ¡Nuestro LimpiaBot está casi listo! Solo necesitamos ajustar el cepillo.</p>
+                <small>Hace 15 minutos</small>
+            </div>
+            <form class="card" style="margin-top: var(--space-md);">
+                <h4>Añadir Comentario al Foro</h4>
+                <div class="form-group">
+                    <textarea rows="3" placeholder="Escribe tu pregunta o comparte una idea..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-secondary">Publicar Comentario</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SmartKids. ¡Creando juntos el futuro!</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel Docente - SmartKids</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="assets/SmartKids-logo.png" alt="SmartKids Logo" class="logo">
+        </div>
+        <nav class="header-nav">
+            <div class="nav-container">
+                <ul class="menu">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="diary.html">Diario</a></li>
+                    <li><a href="quiz.html">Quiz</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="dashboard.html">Perfil</a></li>
+                    <li><a href="teacher.html" class="active">Docente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Panel de Seguimiento del Docente</h2>
+        <p>Bienvenido/a, Profesor/a. Aquí puedes ver el progreso y las alertas de tus estudiantes.</p>
+
+        <div class="tabs">
+            <button class="tab-btn active" onclick="showTab('alerts')">Alertas de Estudiantes</button>
+            <button class="tab-btn" onclick="showTab('reports')">Reportes de Grupo</button>
+            <button class="tab-btn" onclick="showTab('projectsOverview')">Seguimiento de Proyectos</button>
+        </div>
+
+        <div id="alerts" class="tab-content active">
+            <h3>Alertas Recientes</h3>
+            <p>Estudiantes que podrían necesitar un poco más de atención o apoyo.</p>
+            <table class="alerts-table">
+                <thead>
+                    <tr>
+                        <th>Foto</th>
+                        <th>Estudiante</th>
+                        <th>Alerta Detectada</th>
+                        <th>Acción Sugerida</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="https://placehold.co/40x40/EACFFF/333?text=AG" alt="Avatar Ana Gómez"></td>
+                        <td>Ana Gómez</td>
+                        <td>Bajo rendimiento en el último Quiz de Ciencias (Promedio: 45%).</td>
+                        <td><a href="#" class="btn btn-secondary">Ver Detalles del Quiz</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/40x40/AAE9E5/333?text=PP" alt="Avatar Pedro Pérez"></td>
+                        <td>Pedro Pérez</td>
+                        <td>No ha ingresado una entrada en el Diario de Emociones esta semana.</td>
+                        <td><a href="#" class="btn btn-secondary">Enviar Recordatorio Amable</a></td>
+                    </tr>
+                    <tr>
+                        <td><img src="https://placehold.co/40x40/FEB7D3/333?text=LM" alt="Avatar Laura Méndez"></td>
+                        <td>Laura Méndez</td>
+                        <td>Múltiples intentos fallidos en el Quiz de Historia.</td>
+                        <td><a href="#" class="btn btn-secondary">Revisar Preguntas Difíciles</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div id="reports" class="tab-content">
+            <h3>Generar Reportes de Grupo</h3>
+            <ul class="card">
+                <li>
+                    <span>Reporte de Progreso General - 5to Grado A</span>
+                    <a href="#" class="btn">Exportar a PDF</a>
+                </li>
+                <li>
+                    <span>Reporte de Participación en Proyectos Colaborativos</span>
+                    <a href="#" class="btn">Exportar a PDF</a>
+                </li>
+                <li>
+                    <span>Reporte Semanal del Diario de Emociones (Resumen Anónimo)</span>
+                    <a href="#" class="btn">Exportar a PDF</a>
+                </li>
+                 <li>
+                    <span>Reporte de Desempeño en Quizzes (Último Mes)</span>
+                    <a href="#" class="btn">Exportar a PDF</a>
+                </li>
+            </ul>
+        </div>
+        
+        <div id="projectsOverview" class="tab-content">
+            <h3>Seguimiento de Proyectos Colaborativos</h3>
+            <p>Estado actual de los proyectos de los equipos.</p>
+            <div class="card">
+                <h4>Proyecto: Eco-Robots Constructores</h4>
+                <p><strong>Equipo "Los Recicladores Creativos":</strong> Entrega realizada. Esperando revisión.</p>
+                <p><strong>Equipo "Eco Genios Unidos":</strong> En progreso. Última actividad: Subieron diagrama.</p>
+                <p><strong>Equipo "Inventores Verdes":</strong> No han iniciado la entrega.</p>
+                <a href="projects.html" class="btn btn-secondary">Ver todos los detalles del proyecto</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SmartKids. Apoyando la labor docente.</p>
+    </footer>
+
+    <script>
+        // Basic JavaScript for tab functionality
+        function showTab(tabId) {
+            // Hide all tab content
+            const tabContents = document.querySelectorAll('.tab-content');
+            tabContents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Deactivate all tab buttons
+            const tabButtons = document.querySelectorAll('.tab-btn');
+            tabButtons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Show the selected tab content
+            document.getElementById(tabId).classList.add('active');
+
+            // Activate the selected tab button
+            // This assumes the button's onclick attribute is like: onclick="showTab('alerts')"
+            // And the button itself might need an id or a data-tab attribute to be targeted more precisely if needed.
+            // For this example, we'll find the button that calls this tabId.
+            // A more robust way would be to pass 'this' (the button element) to showTab.
+            // For now, let's assume a convention or manually add 'active' to the clicked button.
+            // Example: if you pass 'event.currentTarget' to showTab:
+            // event.currentTarget.classList.add('active');
+            // Or, if buttons have data-tab attributes:
+            document.querySelector(`.tab-btn[onclick="showTab('${tabId}')"]`).classList.add('active');
+        }
+    </script>
+</body>
+</html>

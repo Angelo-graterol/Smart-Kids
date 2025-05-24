@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Gamificado - SmartKids</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="header-logo">
+            <img src="assets/SmartKids-logo.png" alt="SmartKids Logo" class="logo">
+        </div>
+        <nav class="header-nav">
+            <div class="nav-container">
+                <ul class="menu">
+                    <li><a href="dashboard.html">Home</a></li>
+                    <li><a href="diary.html">Diario</a></li>
+                    <li><a href="quiz.html" class="active">Quiz</a></li>
+                    <li><a href="projects.html">Proyectos</a></li>
+                    <li><a href="dashboard.html">Perfil</a></li>
+                    <li><a href="teacher.html">Docente</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <h2>Quiz Divertido: ¡Los Planetas!</h2>
+        
+        <!-- TODO: Add JavaScript for quiz logic:
+            - Load questions and options
+            - Handle option selection (add .selected class)
+            - Check answer and add .correct or .wrong class
+            - Show score
+            - Load next question
+        -->
+        <div class="quiz-current-question">
+            <div class="quiz-question">
+                <p>Pregunta 1/5: ¿Cuál es el planeta más grande de nuestro sistema solar?</p>
+            </div>
+
+            <ul class="quiz-options">
+                <li onclick="selectOption(this)">La Tierra</li>
+                <li onclick="selectOption(this)">Marte</li>
+                <li onclick="selectOption(this)" data-correct="true">Júpiter</li> <li onclick="selectOption(this)">Saturno</li>
+            </ul>
+            
+            <div id="quiz-feedback" style="margin-top: var(--space-sm); font-weight: bold;"></div>
+
+            <button id="next-question-btn" class="btn" style="margin-top: var(--space-md); display: none;">Siguiente Pregunta</button>
+        </div>
+
+        <!--
+        <ul class="quiz-options" style="margin-top: var(--space-lg);">
+            <li class="selected wrong">Mercurio (Seleccionado - Incorrecto)</li>
+            <li class="selected correct">Venus (Seleccionado - Correcto)</li>
+        </ul>
+        -->
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 SmartKids. ¡Aprender es un juego!</p>
+    </footer>
+
+    <script>
+        // Basic JS for option selection and feedback (conceptual)
+        // A more robust solution would be in a separate .js file
+        let selectedOption = null;
+        const feedbackEl = document.getElementById('quiz-feedback');
+        const nextButton = document.getElementById('next-question-btn');
+
+        function selectOption(optionElement) {
+            // Remove 'selected' from previously selected option in the same question
+            if (selectedOption) {
+                selectedOption.classList.remove('selected', 'correct', 'wrong');
+            }
+            selectedOption = optionElement;
+            optionElement.classList.add('selected');
+            
+            // Mock check answer
+            feedbackEl.textContent = ''; // Clear previous feedback
+            nextButton.style.display = 'none';
+
+            // Simulate checking answer after a short delay (e.g., after clicking a "Check Answer" button in a real scenario)
+            // For this example, we'll check immediately.
+            checkAnswer(optionElement);
+        }
+
+        function checkAnswer(optionElement) {
+            const isCorrect = optionElement.dataset.correct === 'true';
+            if (isCorrect) {
+                optionElement.classList.add('correct');
+                feedbackEl.textContent = '¡Correcto! 🎉';
+                feedbackEl.style.color = 'darkgreen';
+            } else {
+                optionElement.classList.add('wrong');
+                feedbackEl.textContent = 'Intenta de nuevo. 🤔';
+                feedbackEl.style.color = 'darkred';
+                // Optionally, highlight the correct answer
+                const correctOption = document.querySelector('.quiz-options li[data-correct="true"]');
+                if (correctOption && correctOption !== optionElement) {
+                    // correctOption.classList.add('correct'); // This might be confusing if they can't re-select
+                }
+            }
+            nextButton.style.display = 'inline-block'; // Show next button
+            // Disable further selections for this question
+            document.querySelectorAll('.quiz-options li').forEach(li => li.onclick = null);
+        }
+        // TODO: Implement next question logic for nextButton
+    </script>
+</body>
+</html>
