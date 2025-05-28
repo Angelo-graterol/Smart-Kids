@@ -3,11 +3,11 @@
 
 :root {
   /* Pastel Alegre Palette */
-  --color-primary: #87C7F1;     /* Baby Blue */
-  --color-secondary: #FEB7D3;   /* Little Girl Pink */
+  --color-primary: #37a4ec;     /* Baby Blue */
+  --color-secondary: #fe97d3;   /* Little Girl Pink */
   --color-accent: #AAE9E5;      /* Blizzard Blue */
-  --color-bg: #FFEDA9;          /* Peach */
-  --color-neutral: #EACFFF;     /* Pale Lavender */
+  --color-bg: #FFF9E6;          /* Peach */
+  --color-neutral: #eaafff;     /* Pale Lavender */
   --color-white: #FFFFFF;
   --color-text: #333333;
   --color-correct: #86E49D;     /* Light Green for correct answers */
